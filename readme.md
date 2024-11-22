@@ -1,7 +1,4 @@
-# RU Cardápio
-
-![RU Cardápio Logo](https://via.placeholder.com/600x150?text=RU+Card%C3%A1pio)  
-*A smart solution for managing university restaurant menus.*
+# Cardápio RU Bot
 
 RU Cardápio is a Python project designed to manage and display the menu of a university restaurant (RU). It automatically fetches the menu from the restaurant's official website and sends it to a Telegram channel.
 
