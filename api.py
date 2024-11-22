@@ -5,11 +5,14 @@ import schedule
 import time
 import datetime
 import logging
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Informações do Telegram
-TELEGRAM_TOKEN = "7189241611:AAHzeL7NqMr5EG9NIV7wCq7iHS_nRA4c6Ts"
-CHANNEL_ID = "@cardapio_ufes"
 
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHANNEL_ID = os.getenv("CHANNEL_ID")
 # Configuração do logging
 logging.basicConfig(
     level=logging.DEBUG,  # Defina o nível de detalhe desejado
