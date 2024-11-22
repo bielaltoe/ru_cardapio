@@ -1,23 +1,36 @@
 # RU Cardápio
 
+![RU Cardápio Logo](https://via.placeholder.com/600x150?text=RU+Card%C3%A1pio)  
+*A smart solution for managing university restaurant menus.*
+
 RU Cardápio is a Python project designed to manage and display the menu of a university restaurant (RU). It automatically fetches the menu from the restaurant's official website and sends it to a Telegram channel.
 
-## Features
-- Automatic fetching of the menu from the official website.
-- Formatting and sending the menu to a Telegram channel.
-- Scheduled menu updates every 6 minutes.
-- Automatic deletion of old messages from Telegram daily at 11:59 PM.
+---
 
-## Technologies Used
+## 🚀 Features
+
+- 🕐 **Automated Updates**: Fetches the menu automatically from the official website.
+- 💬 **Telegram Integration**: Sends formatted menus to a Telegram channel.
+- 🔄 **Scheduled Tasks**: Updates the menu every 6 minutes.
+- 🧹 **Daily Cleanup**: Automatically deletes old messages at 11:59 PM.
+
+---
+
+## 🛠️ Technologies Used
+
 - **Python 3.9**
 - **Libraries:**
   - `requests`
   - `bs4` (BeautifulSoup)
   - `schedule`
   - `logging`
+  - `python-dotenv`
 - **Docker** for containerization.
 
-## Installation and Local Execution
+---
+
+## 🖥️ Installation and Local Execution
+
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-username/ru_cardapio.git
@@ -33,14 +46,22 @@ RU Cardápio is a Python project designed to manage and display the menu of a un
     pip install -r requirements.txt
     ```
 
-4. Configure the Telegram token in the code (`TELEGRAM_TOKEN`) and the channel ID (`CHANNEL_ID`).
+4. Configure the Telegram token and channel ID:
+   - Create a `.env` file in the root directory of the project.
+   - Add the following lines to the `.env` file:
+     ```env
+     TELEGRAM_TOKEN=your-telegram-bot-token
+     CHANNEL_ID=your-telegram-channel-id
+     ```
 
 5. Run the main script:
     ```bash
     python api.py
     ```
 
-## Running with Docker
+---
+
+## 🐳 Running with Docker
 
 1. Build the Docker image:
     ```bash
@@ -52,21 +73,32 @@ RU Cardápio is a Python project designed to manage and display the menu of a un
     docker run -d \
       --name cardapio_ru \
       --restart unless-stopped \
+      --env-file .env \
       cardapio_ru_bot
     ```
 
-## Project Structure
+---
+
+## 📂 Project Structure
+
 - **`api.py`**: Contains the logic to fetch, format, and send the menu to Telegram.
 - **`requirements.txt`**: List of project dependencies.
 - **`Dockerfile`**: Configuration for containerizing the project.
+- **`.env`**: Contains sensitive environment variables (e.g., Telegram token and channel ID).
 
-## How It Works
+---
+
+## 🛡️ How It Works
+
 1. **Menu Fetching**: The script accesses the RU website and extracts the day's menu.
 2. **Formatting and Sending**: The menu is formatted in HTML and sent to the specified Telegram channel.
 3. **Periodic Checks**: Every 6 minutes, the script checks for menu updates.
 4. **Daily Cleanup**: All old messages are deleted at 11:59 PM daily.
 
-## Contributions
+---
+
+## 🤝 Contributions
+
 Contributions are welcome! Follow the steps below:
 
 1. Fork the repository.
@@ -84,9 +116,19 @@ Contributions are welcome! Follow the steps below:
     ```
 5. Open a pull request in the original repository.
 
-## License
+---
+
+## 📜 License
+
 This project is licensed under the terms of the MIT license. See the `LICENSE` file for details.
 
-## Contact
+---
+
+## 📧 Contact
+
 For questions or suggestions, contact via the Telegram channel: [@cardapio_ufes](https://t.me/cardapio_ufes).
+
+---
+
+**🌟 Don't forget to star this repository if you find it useful!**
 
